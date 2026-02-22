@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enigma Machine Replica</title>
+  <link rel="stylesheet" href="final_simulator.css">
+</head>
+
+<body>
+
+  <div class="in_out section">
+    <div class = "input">
+      <form action="final.py" method="get">
+        <label> Input Text:</label><br>
+        <input type="text" name="t_in"><br>
+        <div class="encoding_button">
+          <input type="submit" value="Encode" ><br>
+        </div>
+	<input type="hidden" name="k_in" value="">
+	<input type="hidden" name="rotors" value="">
+	<input type="hidden" name="t_out" value="">
+	<input type="hidden" name="p_in" value="">
+	<input type="hidden" name="p_out" value="">
+      </form>
+    </div>
+    <div class = "output"> 
+      <p>Output Text:</p>
+      <p>{insert output here}</p>
+    </div>
+  </div>
+  <div class="in_out rotor_selection section">
+    <form id = "rotor_update" action="final.py" method="get">
+        <div class="encoding_button">
+          <input type="submit" value="Update Rotors"><br>
+        </div>
+    	<input type="hidden" name="k_in" value="">
+	<label>Type in three letters to change the rotor settings.</label><br>
+    	<input type="text" name="rotors" value="">
+    	<input type="hidden" name="t_out" value="">
+    	<input type="hidden" name="p_in" value="">
+        <input type="hidden" name="p_out" value="">
+    </form>
+  </div>
+	<div class="enigma-machine">
+	  <div class="section">
+	    <h2>Rotors</h2>
+	    <div class="rotors">
+              <div class="rotor">A</div>
+	      <div class="rotor">A</div>
+	      <div class="rotor">A</div>
+	    </select>
+          </div>
+	</div>
+	
+      <div class="section">
+	<h2>Lampboard</h2>
+	<div class="lampboard">
+	  <div class="lamp">Q</div>
+	  <div class="lamp">W</div>
+	  <div class="lamp">E</div>
+	  <div class="lamp">R</div>
+	  <div class="lamp">T</div>
+	  <div class="lamp">Y</div>
+	  <div class="lamp">U</div>
+	  <div class="lamp">I</div>
+	  <div class="lamp">O</div>
+	  <div class="lamp">P</div>
+	</div>
+	<div class="lampboard">
+	  <div class="lamp">A</div>
+	  <div class="lamp">S</div>
+	  <div class="lamp">D</div>
+	  <div class="lamp">F</div>
+	  <div class="lamp">G</div>
+	  <div class="lamp">H</div>
+	  <div class="lamp">J</div>
+	  <div class="lamp">K</div>
+	  <div class="lamp">L</div>
+	</div>
+	<div class="lampboard">
+	  <div class="lamp">Z</div>
+	  <div class="lamp">X</div>
+	  <div class="lamp">C</div>
+	  <div class="lamp">V</div>
+	  <div class="lamp">B</div>
+	  <div class="lamp">N</div>
+	  <div class="lamp">M</div>
+	</div>
+      </div>
+	
+      <div class="section">
+	<h2>Keyboard</h2>
+	<div class="keyboard">
+	  <div class="key">Q</div>
+	  <div class="key">W</div>
+	  <div class="key">E</div>
+	  <div class="key">R</div>
+	  <div class="key">T</div>
+	  <div class="key">Y</div>
+	  <div class="key">U</div>
+	  <div class="key">I</div>
+	  <div class="key">O</div>
+	  <div class="key">P</div>
+	</div>
+	<div class="keyboard">
+	  <div class="key">A</div>
+	  <div class="key">S</div>
+	  <div class="key">D</div>
+	  <div class="key">F</div>
+	  <div class="key">G</div>
+	  <div class="key">H</div>
+	  <div class="key">J</div>
+	  <div class="key">K</div>
+	  <div class="key">L</div>
+	</div>
+	<div class="keyboard">
+	  <div class="key">Z</div>
+	  <div class="key">X</div>
+	  <div class="key">C</div>
+	  <div class="key">V</div>
+	  <div class="key">B</div>
+	  <div class="key">N</div>
+	  <div class="key">M</div>
+	</div>
+	</div>
+	
+	<div class="section">
+	<h2>Plugboard</h2>
+	<div class="plugboard">
+	  <div class="plug">Q</div>
+	  <div class="plug">W</div>
+	  <div class="plug">E</div>
+	  <div class="plug">R</div>
+	  <div class="plug">T</div>
+	  <div class="plug">Y</div>
+	  <div class="plug">U</div>
+	  <div class="plug">I</div>
+	  <div class="plug">O</div>
+	  <div class="plug">P</div>
+	</div>
+	<div class="plugboard">
+	  <div class="plug">A</div>
+	  <div class="plug">S</div>
+	  <div class="plug">D</div>
+	  <div class="plug">F</div>
+	  <div class="plug">G</div>
+	  <div class="plug">H</div>
+	  <div class="plug">J</div>
+	  <div class="plug">K</div>
+	  <div class="plug">L</div>
+	</div>
+	<div class="plugboard">
+	  <div class="plug">Z</div>
+	  <div class="plug">X</div>
+	  <div class="plug">C</div>
+	  <div class="plug">V</div>
+	  <div class="plug">B</div>
+	  <div class="plug">N</div>
+	  <div class="plug">M</div>
+	</div>
+  </div>
+		
+	<div class="back_next">
+			<a href="index.html">Back to Home Screen</a>
+			<a href="final.py">Reset</a>
+	</div>
+</body>
+</html>
