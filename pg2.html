@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enigma Machine Replica</title>
+  <link rel="stylesheet" href="simulator.css">
+</head>
+
+<body>
+  <div class="tutorial">
+      <p> Ok. Now that you have connected the plugboard, it is time to look at the rotors. The rotors are the core part of the encoding process and operate on a poly alphabetic substitution. Let's see how it works. Currently, the rotors are set to an AAA sequence. Try toggling it into an ABC sequence:
+      </p>
+  </div>
+  <div class="enigma-machine">
+    <div class="section">
+      <h2>Rotors</h2>
+      <div class="rotors">
+        <select id="rotor3" class="rotor">
+ 		<option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option><option>H</option><option>I</option><option>J</option><option>K</option><option>L</option><option>M</option><option>N</option><option>O</option><option>P</option><option>Q</option><option>R</option><option>S</option><option>T</option><option>U</option><option>V</option><option>W</option><option>X</option> <option>Y</option><option>Z</option>
+	</select>
+        <select id="rotor2" class="rotor">
+ 		<option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option><option>H</option><option>I</option><option>J</option><option>K</option><option>L</option><option>M</option><option>N</option><option>O</option><option>P</option><option>Q</option><option>R</option><option>S</option><option>T</option><option>U</option><option>V</option><option>W</option><option>X</option> <option>Y</option><option>Z</option>
+	</select>
+        <select id="rotor1" class="rotor">
+ 		<option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option><option>H</option><option>I</option><option>J</option><option>K</option><option>L</option><option>M</option><option>N</option><option>O</option><option>P</option><option>Q</option><option>R</option><option>S</option><option>T</option><option>U</option><option>V</option><option>W</option><option>X</option> <option>Y</option><option>Z</option>
+	</select>
+      </div>
+    </div>
+<script>
+	const rotor3 = document.getElementById('rotor3');
+	const rotor2 = document.getElementById('rotor2');
+	const rotor1 = document.getElementById('rotor1');
+	
+	function select_ABC() {
+	const combo = rotor3.value + rotor2.value + rotor1.value;
+	if (combo === 'ABC') {
+	window.location.href = "pg3.html";
+	}}
+	rotor1.addEventListener('change', select_ABC);
+	rotor2.addEventListener('change', select_ABC);
+	rotor3.addEventListener('change', select_ABC);
+</script>
+    <div class="section">
+	<h2>Lampboard</h2>
+	<div class="lampboard">
+	  <div class="lamp">Q</div>
+	  <div class="lamp">W</div>
+	  <div class="lamp">E</div>
+	  <div class="lamp">R</div>
+	  <div class="lamp">T</div>
+	  <div class="lamp">Y</div>
+	  <div class="lamp">U</div>
+	  <div class="lamp">I</div>
+	  <div class="lamp">O</div>
+	  <div class="lamp">P</div>
+	</div>
+	<div class="lampboard">
+	  <div class="lamp">A</div>
+	  <div class="lamp">S</div>
+	  <div class="lamp">D</div>
+	  <div class="lamp">F</div>
+	  <div class="lamp">G</div>
+	  <div class="lamp">H</div>
+	  <div class="lamp">J</div>
+	  <div class="lamp">K</div>
+	  <div class="lamp">L</div>
+	</div>
+	<div class="lampboard">
+	  <div class="lamp">Z</div>
+	  <div class="lamp">X</div>
+	  <div class="lamp">C</div>
+	  <div class="lamp">V</div>
+	  <div class="lamp">B</div>
+	  <div class="lamp">N</div>
+	  <div class="lamp">M</div>
+	</div>
+    </div>
+
+    <div class="section">
+      <h2>Keyboard</h2>
+	<div class="keyboard">
+	  <div class="key">Q</div>
+	  <div class="key">W</div>
+	  <div class="key">E</div>
+	  <div class="key">R</div>
+	  <div class="key">T</div>
+	  <div class="key">Y</div>
+	  <div class="key">U</div>
+	  <div class="key">I</div>
+	  <div class="key">O</div>
+	  <div class="key">P</div>
+	</div>
+	<div class="keyboard">
+	  <div class="key">A</div>
+	  <div class="key">S</div>
+	  <div class="key">D</div>
+	  <div class="key">F</div>
+	  <div class="key">G</div>
+	  <div class="key">H</div>
+	  <div class="key">J</div>
+	  <div class="key">K</div>
+	  <div class="key">L</div>
+	</div>
+	<div class="keyboard">
+	  <div class="key">Z</div>
+	  <div class="key">X</div>
+	  <div class="key">C</div>
+	  <div class="key">V</div>
+	  <div class="key">B</div>
+	  <div class="key">N</div>
+	  <div class="key">M</div>
+	</div>
+    </div>
+
+    <div class="section">
+      <h2>Plugboard</h2>
+	<div class="plugboard">
+	  <div class="plug">Q</div>
+	  <div class="plug">W</div>
+	  <div class="plug fixed">E</div>
+	  <div class="plug">R</div>
+	  <div class="plug">T</div>
+	  <div class="plug">Y</div>
+	  <div class="plug">U</div>
+	  <div class="plug">I</div>
+	  <div class="plug">O</div>
+	  <div class="plug">P</div>
+	</div>
+	<div class="plugboard">
+	  <div class="plug fixed">A</div>
+	  <div class="plug">S</div>
+	  <div class="plug">D</div>
+	  <div class="plug">F</div>
+	  <div class="plug">G</div>
+	  <div class="plug">H</div>
+	  <div class="plug">J</div>
+	  <div class="plug">K</div>
+	  <div class="plug">L</div>
+	</div>
+	<div class="plugboard">
+	  <div class="plug">Z</div>
+	  <div class="plug">X</div>
+	  <div class="plug">C</div>
+	  <div class="plug">V</div>
+	  <div class="plug">B</div>
+	  <div class="plug">N</div>
+	  <div class="plug">M</div>
+	</div>
+    </div>
+  </div>
+  <div>
+    <div class="back_next">
+        <a href="pg1.html">Back</a>
+        <a href="pg3.html">Next</a>
+  </div>
+
+</body>
+</html>
